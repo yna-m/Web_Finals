@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Bonchon Philippines</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://tb-static.uber.com/prod/image-proc/processed_images/dd51d5c7c3c135ea25149ffe2eedf821/fb86662148be855d931b37d6c1e5fcbe.jpeg')
+        no-repeat center center/cover;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .exit-btn {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      background: transparent;
+      border: none;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    .login-container img.logo {
+      display: block;
+      margin: 0 auto 10px;
+      width: 120px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #b60000;
+      margin-bottom: 10px;
+    }
+
+     .login-container p {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .login-container .toggle-password {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #b60000;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .login-container button:hover {
+      background: #ff3300;
+    }
+
+    .error-msg {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .footer-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .footer-link a {
+      color: #b60000;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="exit-btn" onclick="window.location.href='index.html'">&times;</button>
+
+  <div class="login-container">
+    <img src="logo.png" alt="Bonchon Logo" class="logo">
+    <h2>Welcome Back!</h2>
+    <p>Sign in to your account.</p>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <div class="toggle-password">
+      <input type="checkbox" id="showPassword" onclick="togglePassword()">&nbsp;<label for="showPassword">Show Password</label>
+    </div>
+    <button onclick="login()">Login</button>
+    <p class="error-msg" id="error-msg">Invalid username or password</p>
+    <div class="footer-link">
+      <p><a href="#">Forgot Password?</a></p>
+      <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("error-msg");
+
+      // Dummy credentials
+      const validUser = "admin";
+      const validPass = "bonchon123";
+
+      if (username === validUser && password === validPass) {
+        window.location.href = "index.html";
+      } else {
+        errorMsg.style.display = "block";
+        setTimeout(() => {
+          errorMsg.style.display = "none";
+        }, 3000);
+      }
+    }
+
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    }
+  </script>
+
+</body>
+</html>
