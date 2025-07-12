@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bonchon Philippines</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
-
 <body>
 
   <!-- HEADER -->
   <header>
     <div class="container header-flex">
-      <img src="logo.png" width="200" height="100" alt="Bonchon Logo">
-      <nav>
+      <a href="index.html">
+        <img src="logo.png" width="200" height="100" alt="Bonchon Logo" />
+      </a>
+      <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+      <nav id="nav-menu">
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="menu.html">MENU</a></li>
-          <li><a href="login.html"><img src="profile.png" alt="Login Profile" style="width:42px;height:42px;"></a></li>
+          <li>
+            <a href="login.html">
+              <img src="profile.png" alt="Login Profile" style="width:32px;height:32px;">
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -42,34 +48,31 @@
     </div>
   </section>
 
-<!-- WHY CHOOSE US SECTION -->
-<section class="why-bonchon">
-  <div class="container">
-    <h3>Why Choose Bonchon?</h3>
-    <div class="why-grid">
+  <!-- WHY CHOOSE US SECTION -->
+  <section class="why-bonchon">
+    <div class="container">
+      <h3>Why Choose Bonchon?</h3>
+      <div class="why-grid">
+        <div class="why-card">
+          <img src="https://bonchon-brand.transforms.svdcdn.com/production/Process/hand-battered-photo@2x.jpg?w=892&h=690&auto=compress%2Cformat&fit=crop&dm=1718388110&s=8101d723ea12b093cf019fda2985ac6e" alt="Quality Ingredients">
+          <h4>Quality Ingredients</h4>
+          <p>We carefully select the freshest meats and vegetables to ensure each bite delivers unbeatable flavor and crunch.</p>
+        </div>
 
-      <div class="why-card">
-        <img src="https://bonchon-brand.transforms.svdcdn.com/production/Process/hand-battered-photo@2x.jpg?w=892&h=690&auto=compress%2Cformat&fit=crop&dm=1718388110&s=8101d723ea12b093cf019fda2985ac6e" alt="Quality Ingredients">
-        <h4>Quality Ingredients</h4>
-        <p>We carefully select the freshest meats and vegetables to ensure each bite delivers unbeatable flavor and crunch.</p>
+        <div class="why-card">
+          <img src="https://bonchon-brand.transforms.svdcdn.com/production/Process/hand-brushed-photo@2x.jpg?w=888&h=680&auto=compress%2Cformat&fit=crop&dm=1718388069&s=0b258a9a6f781dd236b0be785fd6742c" alt="Unique Flavors">
+          <h4>Signature Korean Taste</h4>
+          <p>Experience the bold and satisfying taste of our double-fried chicken glazed with our one-of-a-kind soy garlic and spicy sauces.</p>
+        </div>
+
+        <div class="why-card">
+          <img src="https://franchising.bonchon.com/wp-content/uploads/2025/05/home-success-2.webp" alt="Global Presence">
+          <h4>Global Presence</h4>
+          <p>Bonchon brings Korea’s iconic fried chicken to over 300 locations worldwide — including right here in the Philippines since 2010.</p>
+        </div>
       </div>
-
-      <div class="why-card">
-        <img src="https://bonchon-brand.transforms.svdcdn.com/production/Process/hand-brushed-photo@2x.jpg?w=888&h=680&auto=compress%2Cformat&fit=crop&dm=1718388069&s=0b258a9a6f781dd236b0be785fd6742c" alt="Unique Flavors">
-        <h4>Signature Korean Taste</h4>
-        <p>Experience the bold and satisfying taste of our double-fried chicken glazed with our one-of-a-kind soy garlic and spicy sauces.</p>
-      </div>
-
-      <div class="why-card">
-        <img src="https://franchising.bonchon.com/wp-content/uploads/2025/05/home-success-2.webp" alt="Global Presence">
-        <h4>Global Presence</h4>
-        <p>Bonchon brings Korea’s iconic fried chicken to over 300 locations worldwide — including right here in the Philippines since 2010.</p>
-      </div>
-
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- FEATURED MENU -->
   <section class="products">
@@ -95,16 +98,23 @@
     </div>
   </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <p>&copy; 2025 Bonchon Philippines. All rights reserved.</p>
-    <p>Follow us on 
-      <a href="https://www.facebook.com/BonchonPhilippines" target="_blank" rel="noopener noreferrer">Facebook</a> | 
-      <a href="https://www.instagram.com/bonchon_ph/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </p>
-  </div>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Bonchon Philippines. All rights reserved.</p>
+      <p>Follow us on 
+        <a href="https://www.facebook.com/BonchonPhilippines" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+        <a href="https://www.instagram.com/bonchon_ph/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
